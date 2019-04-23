@@ -1,0 +1,22 @@
+{
+  "name": "craigdavey/filemanager",
+  "description": "This is a laravel filemanager",
+  "type": "1",
+  "authors": [
+    {
+      "name": "Craig Davey",
+      "email": "craig96@talktalk.net"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/",
+      "craigdavey\\filemanager\\": "packages/craigdavey/filemanager/src"
+    }
+  }
+}

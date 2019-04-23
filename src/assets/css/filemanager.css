@@ -1,0 +1,267 @@
+.filemanager{
+    width: 100%;
+    height: calc(100vh - 65px);
+    display: block;
+    clear: both;
+}
+.filemanager .vert{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.filemanager .filemanager-toolbar{
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+    background: #006ccc;
+    display: block;
+    clear: both;
+}
+.filemanager .filemanager-toolbar:after{
+    display: block;
+    clear: both;
+    content: ' ';
+}
+.filemanager .filemanager-toolbar section{
+    float: left;
+}
+.filemanager .filemanager-toolbar section button{
+    width: auto;
+    height: 40px;
+    display: inline-block;
+    padding: 0 10px;
+}
+.filemanager .filemanager-toolbar .divider{
+    width: 1px;
+    height: 40px;
+    margin: 0 10px;
+    background: #000;
+    display: block;
+    float: left;
+}
+
+.filemanager .filemanager-toolbar section form{
+    display: block;
+    height: 40px;
+    margin: 0px;
+}
+.filemanager .filemanager-toolbar section form input{
+    height: 40px;
+    padding: 0 10px;
+}
+
+.filemanager .filemanager_viewer{
+    width: 100%;
+    min-height: calc(100% - 80px);
+    padding: 15px;
+    display: block;
+    clear: both;
+    position: relative;
+}
+.filemanager .filemanager_viewer .loader{
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: block;
+    clear: both;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
+}
+
+.filemanager .filemanager_viewer .loader .load{
+    position: absolute;
+    top: calc(50% - 10em);
+    left: calc(50% - 10em);
+}
+
+.filemanager .filemanager_viewer .loader .load,
+.filemanager .filemanager_viewer .loader .load:after {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.filemanager .filemanager_viewer .loader .load {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    font-size: 10px;
+    display: inline-block;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.5em solid rgba(0, 0, 0, 0.2);
+    border-right: 1.5em solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1.5em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.5em solid #000;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.filemanager .filemanager_viewer .results .directory{
+    width: 220px;
+    height: 200px;
+    padding: 48px 10px 10px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    background: url("../../images/folder-icon.png") 50% 50% no-repeat;
+    background-size: contain;
+    font-size: 20px;
+    color: #FFF;
+    vertical-align: top;
+    cursor: pointer;
+}
+.filemanager .filemanager_viewer .results .file{
+    width: 220px;
+    height: 200px;
+    background: #FFF;
+    padding: 10px 0 10px;
+    margin: 5px;
+    display: inline-block;
+    background-size: contain;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+}
+.filemanager .filemanager_viewer .results .file input[type="checkbox"]{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    visibility: hidden;
+}
+.filemanager .filemanager_viewer .results .file.active:after{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(255,255,255,0.8);
+    clear: both;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 170px;
+    text-align: center;
+    content: "\2714";
+    font-size: 90px;
+    color: green;
+}
+.filemanager .filemanager_viewer .results .file img{
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+
+}
+.filemanager .filemanager_viewer .results .file .text{
+    height: 40px;
+    margin: 10px 0 0;
+    padding: 5px 0px;
+    font-size: 13px;
+    color: #FFF;
+    background: #006ccc;
+}
+
+.filemanager .filemanager-upload-block{
+    width: 100%;
+    height: auto;
+    display: none;
+    clear: both;
+    z-index: 10000;
+    position: relative;
+}
+
+.filemanager .filemanager-upload-block .inner{
+    width: 100%;
+    height: 300px;
+    background: #FFF;
+    display: inline-block;
+    clear: both;
+    z-index: 10001;
+    padding: 20px;
+    position: relative;
+}
+.filemanager .filemanager-upload-block .inner .inner-body{
+    text-align: left;
+    position: relative;
+}
+.filemanager .filemanager-upload-block .inner .inner-body .progress{
+    width: 100%;
+    height: 20px;
+    margin: 51px 0 0;
+    display: block;
+    clear: both;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+.filemanager .filemanager-upload-block .inner .inner-body .progress .bar{
+    width: 0px;
+    height: 100%;
+    background: green;
+    display: inline-block;
+    clear: both;
+}
+
+.filemanager .filemanager-upload-block .inner .inner-body .dragdrop{
+    width: 100%;
+    height: 260px;
+    display: block;
+    clear: both;
+    border: 1px dashed rgba(0 , 0 , 255);
+    background: #eee;
+    overflow: auto;
+}
+.filemanager .filemanager-upload-block .inner .inner-body .dragdrop .item{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background: #FFF;
+    display: inline-block;
+    margin: 5px;
+    border: 4px solid #FFF;
+    background-size: cover !important;
+    background-position: 50% 50% !important;
+    position: relative;
+}
+.filemanager .filemanager-upload-block .inner .inner-body .dragdrop .items{
+    width: 100%;
+    height: 100%;
+    display: block;
+    clear: both;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    overflow: auto;
+}
+#file_manager_files{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
