@@ -1,14 +1,14 @@
 {
   "name": "craigdavey/filemanager",
   "description": "This is a laravel filemanager",
-  "type": "1",
+  "type": "library",
   "authors": [
     {
       "name": "Craig Davey",
       "email": "craig96@talktalk.net"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require": {},
   "autoload": {
     "classmap": [
